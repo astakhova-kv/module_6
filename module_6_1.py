@@ -7,25 +7,21 @@ class Animal:
 
     def eat(self, food):
         if isinstance(food, Fruit):
-            self.edible = True
-        if self.edible == True:
             print(f'{self.name} съел {food.name}')
             self.fed = True
-            return self.fed
-        else:
+        elif isinstance(food, Flower):
             print(f'{self.name} не стал есть {food.name}')
             self.alive = False
-            return self.alive
 
 class Plant:
     edible = False
     def __init__(self, name):
         self.name = name
 
-class Mammal(Animal, Plant):
+class Mammal(Animal):
     pass
 
-class Predator(Animal, Plant):
+class Predator(Animal):
     pass
 
 class Flower(Plant):
